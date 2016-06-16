@@ -2,10 +2,13 @@ process.env.DISABLE_NOTIFIER = true;
 
 var elixir = require('laravel-elixir'),
     path = require('path'),
-    webpack = require('webpack');
+    webpack = require('webpack'),
+    postStylus = require('poststylus');
 
+require('laravel-elixir-stylus');
 require('laravel-elixir-livereload');
 require('laravel-elixir-webpack-ex');
+
 
 /*
  |--------------------------------------------------------------------------
@@ -42,9 +45,13 @@ elixir(function(mix) {
     mix.copy('node_modules/materialize-css/dist/js/materialize.min.js', 'public/js');
 
     /**
-     * Less
+     * Stylus
      **/
-    mix.less('app.less');
+    mix.stylus('app.styl', null, {
+        use: [
+            postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
+        ]
+    });
 
     /**
      * Scripts webpack bundling and copying

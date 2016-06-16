@@ -8,7 +8,10 @@
     "typescript-extends": "^1.0.1",
     "typescript-param": "^1.0.0",
     "typescript-metadata": "^1.0.0",
-    "typings": "^0.8.1"
+    "typings": "^0.8.1",
+    "laravel-elixir-stylus": "^1.0.1",
+    "poststylus": "^0.2.3",
+    "rucksack-css": "^0.8.5"
   },
   "scripts": {
     "install": "cd resources/assets/typescript && typings install"
@@ -37,6 +40,7 @@
     "source-map-loader": "0.1.5",
     "underscore": "^1.8.3",
     "webpack": "1.13.0",
-    "zone.js": "^0.6.12"
+    "zone.js": "^0.6.12",
+    "slick-carousel": "^1.6.0"
   }
 }
