@@ -19,18 +19,27 @@ require('laravel-elixir-webpack-ex');
  */
 
 elixir(function(mix) {
-    /**
-     * Bootstrap
-     **/
-    var bootstrapPath = 'node_modules/bootstrap-less';
-
-    mix.copy(bootstrapPath, 'resources/vendor/bootstrap/');
-    mix.copy(bootstrapPath + '/fonts', 'public/fonts');
 
     /**
      * JQuery
      **/
-    mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery');
+    mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js');
+
+
+    /**
+     * Materialize fonts
+     **/
+    mix.copy('node_modules/materialize-css/dist/fonts', 'public/fonts');
+
+    /**
+     * Materialize css
+     **/
+    mix.copy('node_modules/materialize-css/dist/css/materialize.min.css', 'public/css');
+
+    /**
+     * Materialize js
+     **/
+    mix.copy('node_modules/materialize-css/dist/js/materialize.min.js', 'public/js');
 
     /**
      * Less
