@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace Djjeck\Jobs;
 
 use Illuminate\Bus\Queueable;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace Djjeck;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
- * App\User
+ * Djjeck\User
  *
  * @property integer $id
  * @property string $name

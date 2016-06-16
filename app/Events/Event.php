@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Djjeck\Events;
 
 abstract class Event
 {

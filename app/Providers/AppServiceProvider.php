@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Djjeck\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

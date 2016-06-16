@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\ExampleControllers;
+namespace Djjeck\Http\Controllers\ExampleControllers;
 
-use App\Http\Controllers\Controller;
+use Djjeck\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
