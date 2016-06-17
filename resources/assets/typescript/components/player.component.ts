@@ -56,7 +56,7 @@ export class PlayerComponent implements OnInit {
     }
 
     private initialize($data) {
-        console.log($data);
+        // console.log($data);
     }
 
     private buildPlaylist($data) {
