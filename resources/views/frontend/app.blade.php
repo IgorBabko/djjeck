@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="col s6">This div is 6-columns wide</div>
-        <div class="col s6">
-            <dj-player></dj-player>
+        <div class="col s12">
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+            <dj-player-modal></dj-player-modal>
         </div>
     </div>
 </div>

@@ -58,4 +58,10 @@ export class PlayerComponent implements OnInit {
     private initialize($data) {
         console.log($data);
     }
+
+    private buildPlaylist($data) {
+        for (let i = 0; i < $data.length; ++i) {
+            
+        }
+    }
 }
