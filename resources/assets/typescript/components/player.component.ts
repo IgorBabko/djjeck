@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     'selector': 'dj-player',
-    'templateUrl': '/templates/player'
+    'templateUrl': '/templates/components.player'
 })
 export class PlayerComponent {
 

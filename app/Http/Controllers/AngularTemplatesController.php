@@ -1,6 +1,6 @@
 <?php
 
-namespace Djjeck\Http\Controllers\ExampleControllers;
+namespace Djjeck\Http\Controllers;
 
 use Djjeck\Http\Controllers\Controller;
 use Illuminate\Http\Request;
