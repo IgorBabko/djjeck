@@ -12,14 +12,14 @@ export class PlayerComponent implements OnInit {
 
     ngOnInit() {
         
-        jQuery(".jAudio--player").jAudio({
-            playlist: [],
-            defaultAlbum: undefined,
-            defaultArtist: undefined,
-            defaultTrack: 0,
-            autoPlay: false,
-            debug: false
-        });
+        // jQuery(".jAudio--player").jAudio({
+        //     playlist: [],
+        //     defaultAlbum: undefined,
+        //     defaultArtist: undefined,
+        //     defaultTrack: 0,
+        //     autoPlay: false,
+        //     debug: false
+        // });
 
     }
 }
