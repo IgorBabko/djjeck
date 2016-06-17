@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Djjack\Track;
+use Djjeck\Track;
 
 class TracksTableSeeder extends Seeder
 {
@@ -12,7 +12,7 @@ class TracksTableSeeder extends Seeder
      */
     public function run()
     {
-        Mix::truncate();
+        Track::truncate();
         factory(Track::class, 20)->create();
     }
 }

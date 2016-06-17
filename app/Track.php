@@ -3,7 +3,6 @@
 namespace Djjeck;
 
 use Illuminate\Database\Eloquent\Model;
-use Mix;
 
 class Track extends Model
 {

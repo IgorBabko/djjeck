@@ -1,25 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { Mix } from '../models/mix.model';
+import { Track } from '../models/track.model';
+import { MusicService } from '../services/music.service';
 
 declare var jQuery: any;
 
 @Component({
     'selector': 'dj-player',
-    'templateUrl': '/templates/components.player'
+    'templateUrl': '/templates/components.player',
+    'providers': [MusicService]
 })
 export class PlayerComponent implements OnInit {
 
-    constructor() {}
+    public mixes: Mix[];
+
+    constructor(private musicService: MusicService) {}
 
     ngOnInit() {
+
+        this
+            .musicService
+            .getMixes()
+            .subscribe(
+                mixes => {
+                    this.mixes = mixes;
+                    console.log(mixes);
+                },
+                error => console.error(error)
+            );
         
-        // jQuery(".jAudio--player").jAudio({
-        //     playlist: [],
-        //     defaultAlbum: undefined,
-        //     defaultArtist: undefined,
-        //     defaultTrack: 0,
-        //     autoPlay: false,
-        //     debug: false
-        // });
+        console.log(jQuery(".jAudio--player"));
 
     }
 }

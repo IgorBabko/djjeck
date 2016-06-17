@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Djjack\Mix;
+use Djjeck\Mix;
 
 class MixesTableSeeder extends Seeder
 {
