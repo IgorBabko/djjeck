@@ -6,7 +6,6 @@ export class Track {
     private cover: string;
     private url: string;
 
-    
     constructor(
         mix_id?: string,    
         name?: string,
@@ -20,5 +19,4 @@ export class Track {
         this.cover = cover || '';
         this.url = url || '';
     }
-
 }
