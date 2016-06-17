@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 import { PlayerComponent } from './components/player.component';
+import { ControlsComponent } from './components/controls.component';
 
+declare var jQuery: any;
 
 // @Routes([
 //     {
@@ -12,8 +14,12 @@ import { PlayerComponent } from './components/player.component';
 @Component({
     'selector': 'app',
     'templateUrl': '/templates/app',
-    'directives': [ROUTER_DIRECTIVES, PlayerComponent],
+    'directives': [ROUTER_DIRECTIVES, PlayerComponent, ControlsComponent],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     constructor () {}
+
+    ngOnInit() {
+        jQuery('.modal-trigger').leanModal();
+    }
 }
