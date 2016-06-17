@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    'selector': 'player',
+    'selector': 'dj-player',
     'templateUrl': '/templates/player'
 })
-export class IndexComponent {
+export class PlayerComponent {
 
     constructor() {}
 }
