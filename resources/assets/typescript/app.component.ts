@@ -11,7 +11,7 @@ import { IndexComponent } from './components/index.component';
 @Component({
     'directives': [ROUTER_DIRECTIVES],
     'selector': 'app',
-    'template': '<button class="">Listen</button>'
+    'templateUrl': '/templates/index'
 })
 export class AppComponent {
     constructor () {}
