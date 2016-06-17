@@ -22,14 +22,40 @@ export class PlayerComponent implements OnInit {
             .musicService
             .getMixes()
             .subscribe(
-                mixes => {
-                    this.mixes = mixes;
-                    console.log(mixes);
-                },
+                mixes => this.initialize(mixes),
                 error => console.error(error)
             );
-        
-        console.log(jQuery(".jAudio--player"));
 
+        var t = {
+            playlist: [
+                {
+                    file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+                    thumb: "img/deluxe.jpg",
+                    trackName: "Niko Bellic",
+                    trackArtist: "dj jeck",
+                    trackAlbum: "dj jeck"
+                },
+                {
+                    file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+                    thumb: "img/frash_sound.jpg",
+                    trackName: "Blank",
+                    trackArtist: "dj jeck",
+                    trackAlbum: "dj jeck"
+                },
+                {
+                    file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+                    thumb: "img/time_to_dance.jpg",
+                    trackName: "Fade",
+                    trackArtist: "dj jeck",
+                    trackAlbum: "dj jeck"
+                }
+            ]
+        };
+
+        jQuery(".jAudio--player").jAudio(t);
+    }
+
+    private initialize($data) {
+        console.log($data);
     }
 }
