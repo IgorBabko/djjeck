@@ -11,3 +11,6 @@ Homestead.json
 .idea
 .phpstorm.meta.php
 _ide_helper.php
+
+!/public/css/jaudio.min.css
+!/public/js/jaudio.min.js
