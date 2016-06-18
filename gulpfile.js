@@ -49,6 +49,16 @@ elixir(function(mix) {
      **/
     mix.copy('node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js', 'public/js')
 
+    /**
+     * Font-awesome css
+     **/
+    mix.copy('node_modules/font-awesome/css/font-awesome.css', 'public/css/font-awesome.css')
+
+    /**
+     * Font-awesome fonts
+     **/
+    mix.copy('node_modules/font-awesome/fonts', 'public/fonts')
+
 
     /**
      * Stylus

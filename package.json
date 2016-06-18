@@ -31,6 +31,7 @@
     "bootstrap-less": "^3.3.8",
     "es6-shim": "^0.35.0",
     "es7-reflect-metadata": "1.2.0",
+    "font-awesome": "^4.6.3",
     "jquery": "^2.0.0",
     "laravel-elixir": "^4.0.0",
     "laravel-elixir-livereload": "^1.1.4",

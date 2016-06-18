@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 import { SearchComponent } from './components/search.component';
 import { PlayerComponent } from './components/player.component';
+import { SocialComponent } from './components/social.component';
 import { ControlsComponent } from './components/controls.component';
 import { MixComponent } from './components/mix.component';
 import { MusicService } from './services/music.service';
@@ -19,7 +20,7 @@ declare var ScrollMagic: any;
 @Component({
     'selector': 'app',
     'templateUrl': '/templates/app',
-    'directives': [ROUTER_DIRECTIVES, SearchComponent, PlayerComponent, ControlsComponent, MixComponent],
+    'directives': [ROUTER_DIRECTIVES, SearchComponent, PlayerComponent, SocialComponent, ControlsComponent, MixComponent],
     'providers': [MusicService]
 })
 export class AppComponent implements OnInit {
@@ -29,13 +30,8 @@ export class AppComponent implements OnInit {
     constructor (private musicService: MusicService) {}
 
     ngOnInit() {
-        $('.modal-trigger').leanModal();
-        $('.parallax').parallax();
-        // $('.materialboxed').materialbox();
-        var $this = this;
-        $(function() {
-            $this.pinColumnByScrollMagic();
-        });
+
+        this.pinColumnByScrollMagic();
 
         this
             .musicService

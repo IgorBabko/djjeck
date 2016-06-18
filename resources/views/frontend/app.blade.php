@@ -1,13 +1,8 @@
-<!-- <dj-navbar></dj-navbar> -->
-<!-- <div class="parallax-container"> -->
-<!-- <div class="parallax"> -->
-<!-- <img src="img/main.jpeg"> -->
-<!-- </div> -->
-<!-- </div> -->
 <div class="container">
     <div class="row">
-        <div class="col s12 m6 l6">
+        <div class="col s12 m6 l6" style="min-height: 100vh">
             <div class="pinned">
+                <dj-social></dj-social>
                 <dj-search></dj-search>
                 <dj-player></dj-player>
             </div>
