@@ -18,7 +18,6 @@ export class PlayerComponent implements OnInit {
     constructor(private musicService: MusicService) {}
 
     ngOnInit() {
-        this.pinByScrollMagic();
         this.loadMixes();
         this.buildPlaylist(2);
     }
@@ -70,14 +69,5 @@ export class PlayerComponent implements OnInit {
         for (let i = 0; i < $data.length; ++i) {
             
         }
-    }
-
-    private pinByScrollMagic() {
-        let controller = new ScrollMagic.Controller();
-
-        new ScrollMagic.Scene({
-            triggerElement: '.jAudio--player',
-            triggerHook: '0.1'
-        }).setPin('.jAudio--player').addTo(controller);
     }
 }

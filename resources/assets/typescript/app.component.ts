@@ -8,6 +8,7 @@ import { MusicService } from './services/music.service';
 import { Mix } from './models/mix.model';
 
 declare var $: any;
+declare var ScrollMagic: any;
 
 // @Routes([
 //     {
@@ -30,6 +31,11 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         $('.modal-trigger').leanModal();
         $('.parallax').parallax();
+        // $('.materialboxed').materialbox();
+        var $this = this;
+        $(function() {
+            $this.pinColumnByScrollMagic();
+        });
 
         this
             .musicService
@@ -41,5 +47,14 @@ export class AppComponent implements OnInit {
                 },
                 error => console.error(error)
             );
+    }
+
+    private pinColumnByScrollMagic() {
+        let controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+            triggerElement: '.pinned',
+            triggerHook: '0.2'
+        }).setPin('.pinned').addTo(controller);
     }
 }
