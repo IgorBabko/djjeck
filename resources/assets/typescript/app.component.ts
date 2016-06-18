@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { NavbarComponent } from './components/navbar.component';
+import { SearchComponent } from './components/search.component';
 import { PlayerComponent } from './components/player.component';
 import { ControlsComponent } from './components/controls.component';
 import { MixComponent } from './components/mix.component';
 import { MusicService } from './services/music.service';
 import { Mix } from './models/mix.model';
 
-declare var jQuery: any;
+declare var $: any;
 
 // @Routes([
 //     {
@@ -18,7 +18,7 @@ declare var jQuery: any;
 @Component({
     'selector': 'app',
     'templateUrl': '/templates/app',
-    'directives': [ROUTER_DIRECTIVES, NavbarComponent, PlayerComponent, ControlsComponent, MixComponent],
+    'directives': [ROUTER_DIRECTIVES, SearchComponent, PlayerComponent, ControlsComponent, MixComponent],
     'providers': [MusicService]
 })
 export class AppComponent implements OnInit {
@@ -28,8 +28,8 @@ export class AppComponent implements OnInit {
     constructor (private musicService: MusicService) {}
 
     ngOnInit() {
-        jQuery('.modal-trigger').leanModal();
-        jQuery('.parallax').parallax();
+        $('.modal-trigger').leanModal();
+        $('.parallax').parallax();
 
         this
             .musicService

@@ -1,14 +1,14 @@
-
 <!-- <dj-navbar></dj-navbar> -->
 <!-- <div class="parallax-container"> -->
-    <!-- <div class="parallax"> -->
-    <!-- <img src="img/main.jpeg"> -->
-
-    <!-- </div> -->
+<!-- <div class="parallax"> -->
+<!-- <img src="img/main.jpeg"> -->
+<!-- </div> -->
 <!-- </div> -->
 <div class="container">
     <div class="row">
         <div class="col s12 m6 l6">
+            <dj-search></dj-search>
+
             <dj-player></dj-player>
         </div>
         <div class="col s12 m6 l6">
