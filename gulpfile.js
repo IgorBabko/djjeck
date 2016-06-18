@@ -45,6 +45,12 @@ elixir(function(mix) {
     mix.copy('node_modules/materialize-css/dist/js/materialize.min.js', 'public/js');
 
     /**
+     * Scrollmagic js
+     **/
+    mix.copy('node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js', 'public/js')
+
+
+    /**
      * Stylus
      **/
     mix.stylus('app.styl', null, {

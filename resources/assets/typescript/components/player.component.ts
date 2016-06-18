@@ -3,7 +3,8 @@ import { Mix } from '../models/mix.model';
 import { Track } from '../models/track.model';
 import { MusicService } from '../services/music.service';
 
-declare var jQuery: any;
+declare var $: any;
+declare var ScrollMagic: any;
 
 @Component({
     'selector': 'dj-player',
@@ -17,7 +18,12 @@ export class PlayerComponent implements OnInit {
     constructor(private musicService: MusicService) {}
 
     ngOnInit() {
+        this.pinByScrollMagic();
+        this.loadMixes();
+        this.buildPlaylist(2);
+    }
 
+    private loadMixes() {
         this
             .musicService
             .getMixes()
@@ -25,6 +31,13 @@ export class PlayerComponent implements OnInit {
                 mixes => this.initialize(mixes),
                 error => console.error(error)
             );
+    }
+
+    private initialize($data) {
+        // console.log($data);
+    }
+
+    private buildPlaylist($data) {
 
         var t = {
             playlist: [
@@ -52,16 +65,19 @@ export class PlayerComponent implements OnInit {
             ]
         };
 
-        jQuery(".jAudio--player").jAudio(t);
-    }
+        $(".jAudio--player").jAudio(t);
 
-    private initialize($data) {
-        // console.log($data);
-    }
-
-    private buildPlaylist($data) {
         for (let i = 0; i < $data.length; ++i) {
             
         }
+    }
+
+    private pinByScrollMagic() {
+        let controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+            triggerElement: '.jAudio--player',
+            triggerHook: '0.1'
+        }).setPin('.jAudio--player').addTo(controller);
     }
 }

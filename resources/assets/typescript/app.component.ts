@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { NavbarComponent } from './components/navbar.component';
 import { PlayerComponent } from './components/player.component';
 import { ControlsComponent } from './components/controls.component';
 import { MixComponent } from './components/mix.component';
@@ -17,7 +18,7 @@ declare var jQuery: any;
 @Component({
     'selector': 'app',
     'templateUrl': '/templates/app',
-    'directives': [ROUTER_DIRECTIVES, PlayerComponent, ControlsComponent, MixComponent],
+    'directives': [ROUTER_DIRECTIVES, NavbarComponent, PlayerComponent, ControlsComponent, MixComponent],
     'providers': [MusicService]
 })
 export class AppComponent implements OnInit {
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         jQuery('.modal-trigger').leanModal();
+        jQuery('.parallax').parallax();
 
         this
             .musicService
