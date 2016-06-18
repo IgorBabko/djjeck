@@ -7,12 +7,11 @@
     </head>
     <body>
 
+        @include ('backend.partials.slider')
         <app>
             @include('backend.loading')
         </app>
-        
         @include ('backend.partials.scripts')
         @include ('backend.partials.livereload')
-        
     </body>
 </html>
