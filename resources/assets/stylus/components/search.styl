@@ -1,20 +1,38 @@
 .search
     width: 400px
     position: relative
+    display: flex
+
+    a
+        width: 52px
+        height: 52px
+        display: inline-block
+        
+        i
+            margin: 8px -9px
+            color: white
+            font-size: 24px
 
     input
         margin: 0
         border: none
-        padding: 0 10px
+        padding: 5px 10px
         font-size: 16px
         font-weight: 400
+        display: inline-block
         
         &:focus
             border: none !important
             box-shadow: none !important
     
-    i
-        position: absolute
-        top: 10px
-        right: 5px
-        cursor: pointer
+    .reset-button
+        background: #ff6e6e
+        
+        &:hover
+            background: darken(#ff6e6e, 15%)
+
+    .search-button
+        background: #4788ff
+        
+        &:hover
+            background: darken(#4788ff, 15%)

@@ -6,8 +6,6 @@
         <base href="/"/>
     </head>
     <body>
-
-        @include ('backend.partials.slider')
         <app>
             @include('backend.loading')
         </app>

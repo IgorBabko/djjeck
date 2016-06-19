@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { LogoComponent } from './components/logo.component';
 import { SearchComponent } from './components/search.component';
 import { PlayerComponent } from './components/player.component';
 import { SocialComponent } from './components/social.component';
@@ -11,16 +12,10 @@ import { Mix } from './models/mix.model';
 declare var $: any;
 declare var ScrollMagic: any;
 
-// @Routes([
-//     {
-//         path: '/',
-//         component: IndexComponent
-//     }
-// ])
 @Component({
     'selector': 'app',
     'templateUrl': '/templates/app',
-    'directives': [ROUTER_DIRECTIVES, SearchComponent, PlayerComponent, SocialComponent, ControlsComponent, MixComponent],
+    'directives': [ROUTER_DIRECTIVES, LogoComponent, SearchComponent, PlayerComponent, SocialComponent, ControlsComponent, MixComponent],
     'providers': [MusicService]
 })
 export class AppComponent implements OnInit {
@@ -30,9 +25,11 @@ export class AppComponent implements OnInit {
     constructor (private musicService: MusicService) {}
 
     ngOnInit() {
-
         this.pinColumnByScrollMagic();
+        this.loadMixes();
+    }
 
+    private loadMixes() {
         this
             .musicService
             .getMixes()

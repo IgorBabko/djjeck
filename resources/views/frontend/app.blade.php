@@ -1,9 +1,10 @@
+<dj-logo></dj-logo>
 <div class="container">
     <div class="row">
         <div class="col s12 m6 l6" style="min-height: 100vh">
             <div class="pinned">
                 <dj-social></dj-social>
-                <dj-search></dj-search>
+                <!--<dj-search></dj-search>-->
                 <dj-player></dj-player>
             </div>
         </div>
