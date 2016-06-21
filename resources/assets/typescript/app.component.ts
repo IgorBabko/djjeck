@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 import { LogoComponent } from './components/logo.component';
 import { SearchComponent } from './components/search.component';
@@ -22,11 +22,17 @@ export class AppComponent implements OnInit {
 
     public mixes: Mix[];
 
+    @ViewChild(PlayerComponent) playerComponent: PlayerComponent;
+
     constructor (private musicService: MusicService) {}
 
     ngOnInit() {
         this.pinColumnByScrollMagic();
         this.loadMixes();
+    }
+
+    public changeMix(mix) {
+        this.playerComponent.changePlaylist(mix);
     }
 
     private loadMixes() {
@@ -47,7 +53,7 @@ export class AppComponent implements OnInit {
 
         new ScrollMagic.Scene({
             triggerElement: '.pinned',
-            triggerHook: '0.2'
+            triggerHook: '0.1'
         }).setPin('.pinned').addTo(controller);
     }
 }

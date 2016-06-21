@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Mix } from '../models/mix.model';
 import { Track } from '../models/track.model';
 import { MusicService } from '../services/music.service';
@@ -13,61 +13,93 @@ declare var ScrollMagic: any;
 })
 export class PlayerComponent implements OnInit {
 
-    public mixes: Mix[];
+    @Input() mix: Mix;
+    public playlist = [];
 
     constructor(private musicService: MusicService) {}
 
     ngOnInit() {
-        this.loadMixes();
-        this.buildPlaylist(2);
+        this.loadMix(1);
     }
 
-    private loadMixes() {
+    private loadMix(id: string | number) {
         this
             .musicService
-            .getMixes()
+            .getMix(id)
             .subscribe(
-                mixes => this.initialize(mixes),
+                mix   => this.buildPlaylist(mix),
                 error => console.error(error)
             );
     }
 
-    private initialize($data) {
-        // console.log($data);
+    public changePlaylist(mix) {
+        this.buildPlaylist(mix);
     }
 
-    private buildPlaylist($data) {
+    private buildPlaylist(mix) {
 
-        var t = {
-            playlist: [
-                {
-                    file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
-                    thumb: "img/deluxe.jpg",
-                    trackName: "Niko Bellic",
-                    trackArtist: "dj jeck",
-                    trackAlbum: "dj jeck"
-                },
-                {
-                    file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
-                    thumb: "img/frash_sound.jpg",
-                    trackName: "Blank",
-                    trackArtist: "dj jeck",
-                    trackAlbum: "dj jeck"
-                },
-                {
-                    file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
-                    thumb: "img/time_to_dance.jpg",
-                    trackName: "Fade",
-                    trackArtist: "dj jeck",
-                    trackAlbum: "dj jeck"
-                }
-            ]
-        };
+        // var t = {
+        //     playlist: [
+        //         {
+        //             file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+        //             thumb: "img/deluxe.jpg",
+        //             trackName: "Niko Bellic",
+        //             trackArtist: "dj jeck",
+        //             trackAlbum: "dj jeck"
+        //         },
+        //         {
+        //             file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+        //             thumb: "img/frash_sound.jpg",
+        //             trackName: "Blank",
+        //             trackArtist: "dj jeck",
+        //             trackAlbum: "dj jeck"
+        //         },
+        //         {
+        //             file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+        //             thumb: "img/time_to_dance.jpg",
+        //             trackName: "Fade",
+        //             trackArtist: "dj jeck",
+        //             trackAlbum: "dj jeck"
+        //         },
+        //         {
+        //             file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+        //             thumb: "img/deluxe.jpg",
+        //             trackName: "Niko Bellic",
+        //             trackArtist: "dj jeck",
+        //             trackAlbum: "dj jeck"
+        //         },
+        //         {
+        //             file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+        //             thumb: "img/frash_sound.jpg",
+        //             trackName: "Blank",
+        //             trackArtist: "dj jeck",
+        //             trackAlbum: "dj jeck"
+        //         },
+        //         {
+        //             file: "https://s3.eu-central-1.amazonaws.com/djjeck/DJ+JECK+-+Fresh+Sound+2015.mp3",
+        //             thumb: "img/time_to_dance.jpg",
+        //             trackName: "Fade",
+        //             trackArtist: "dj jeck",
+        //             trackAlbum: "dj jeck"
+        //         }
+        //     ]
+        // };
 
-        $(".jAudio--player").jAudio(t);
+        let tracks = mix.tracks;
+        this.playlist = [];
 
-        for (let i = 0; i < $data.length; ++i) {
-            
+        for (let i = 0; i < tracks.length; ++i) {
+            this.playlist.push({
+                file: tracks[i].url,
+                thumb: mix.cover,
+                trackName: tracks[i].name,
+                trackArtist: "dj jeck",
+                trackAlbum: mix.name
+            });
         }
+
+        $(".jAudio--player").jAudio(
+            { playlist: this.playlist }
+        );
     }
 }

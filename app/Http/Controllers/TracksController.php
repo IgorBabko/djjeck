@@ -2,15 +2,13 @@
 
 namespace Djjeck\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Djjeck\Http\Requests;
 use Djjeck\Track;
 
 class TracksController extends Controller
 {
     public function getAll()
     {
-        return Track::all();
+        return Track::with('mix')->get();
     }
 
     public function getOne(Track $track)

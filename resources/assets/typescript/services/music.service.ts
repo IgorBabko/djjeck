@@ -16,7 +16,7 @@ export class MusicService {
             .catch(this.handleError);
     }
 
-    getMix(id: string): Observable<Mix> {
+    getMix(id: string | number): Observable<Mix> {
         return this.http.get(`/mixes/${id}`)
             .map(this.extractData)
             .catch(this.handleError);

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Mix } from '../models/mix.model';
 
 declare var $: any;
@@ -10,9 +10,13 @@ declare var $: any;
 export class MixComponent implements OnInit {
 
     @Input() mix: Mix;
+    @Output() mixChanged = new EventEmitter();
 
     ngOnInit() {
         $('.materialboxed').materialbox();
-        console.log('+');
+    }
+
+    public changeMix(event) {
+        this.mixChanged.emit(this.mix);
     }
 }

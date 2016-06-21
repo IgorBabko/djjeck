@@ -10,7 +10,7 @@
         </div>
         <div class="col s12 m6 l6">
             <div *ngFor="let mix of mixes; let i = index" style="padding: 30px 50px">
-                <dj-mix></dj-mix>
+                <dj-mix [mix]="mix" (mixChanged)="changeMix(mix)"></dj-mix>
             </div>
         </div>
     </div>
