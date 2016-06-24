@@ -1,14 +1,16 @@
 <dj-logo></dj-logo>
 <div class="container">
     <div class="row">
-        <div class="col s12 m6 l6" style="min-height: 100vh">
-            <div class="pinned">
+        <div class="col s12" style="padding-top: 20px; min-height: 100vh">
+            <!--<div class="pinned">-->
                 <dj-social></dj-social>
                 <!--<dj-search></dj-search>-->
                 <dj-player></dj-player>
-            </div>
+            <!--</div>-->
         </div>
-        <div class="col s12 m6 l6">
+        <div class="col s12">
+        <h1 style="color: #e2e2e2; text-align: center; text-transform: uppercase">Albums</h1></div>
+        <div class="col s12" style="padding-top: 40px">
             <div *ngFor="let mix of mixes; let i = index" style="padding: 30px 50px">
                 <dj-mix [mix]="mix" (mixChanged)="changeMix(mix)"></dj-mix>
             </div>

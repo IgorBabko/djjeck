@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     constructor (private musicService: MusicService) {}
 
     ngOnInit() {
-        this.pinColumnByScrollMagic();
+        //this.pinColumnByScrollMagic();
         this.loadMixes();
     }
 
@@ -51,9 +51,9 @@ export class AppComponent implements OnInit {
     private pinColumnByScrollMagic() {
         let controller = new ScrollMagic.Controller();
 
-        new ScrollMagic.Scene({
-            triggerElement: '.pinned',
-            triggerHook: '0.1'
-        }).setPin('.pinned').addTo(controller);
+//        new ScrollMagic.Scene({
+//            triggerElement: '.pinned',
+//            triggerHook: '0.1'
+//        }).setPin('.pinned').addTo(controller);
     }
 }
